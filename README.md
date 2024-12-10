@@ -27,4 +27,3 @@ This project leverages the Temporal Fusion Transformer (TFT) and sentiment analy
 ## **Workflow**:
 1. Run `stock_web_UI.ipynb` to load datasets, models, and start the web application.
 2. Access results and predictions through the web interface.
-3. For a comprehensive understanding, refer to sections 7 and 8 of the project report.
