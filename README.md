@@ -11,7 +11,7 @@ This project leverages the Temporal Fusion Transformer (TFT) and sentiment analy
    - Sentiment analysis performed using FinBERT; processed data is included.
 
 2. **Pretrained Models**:
-   - Trained models (`tft_model_tsla.pth`, `tft_model_aapl.pth`) are located in the `models/` directory.
+   - Trained models (`tft_model_tsla.pth`, `tft_model_aapl.pth`) are located in the `Stock_Web_UI` folder.
 
 3. **Web Application**:
    - The interactive web app (`stock_web_UI.ipynb`) enables:
