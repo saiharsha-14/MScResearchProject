@@ -1,4 +1,4 @@
-# MScResearchProject
+# MSc Research Project
 
 This repository contains all the necessary components to replicate the project **"Enhancing Financial Forecasting through Transformer Models Using Social Media and News Insights"**.
 
