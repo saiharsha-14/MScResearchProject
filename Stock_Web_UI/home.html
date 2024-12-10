@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Insights & Predictions</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #3b5998, #8b9dc3);
+            color: #fff;
+        }
+
+        /* Container for the form */
+        .dashboard-container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Heading styling */
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Label styling */
+        label {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Input and select styling */
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #f7f7f7;
+        }
+
+        /* Submit button styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3b5998;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #2d4373;
+        }
+
+        /* Footer styling for extra information */
+        footer {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Financial Insights & Predictions</h2>
+        
+        <!-- Common Ticker Input -->
+        <form action="/predict" method="post">
+            <label for="ticker">Ticker Symbol:</label>
+            <input type="text" id="ticker" name="ticker" placeholder="Enter stock ticker (e.g., TSLA)" required>
+
+            <!-- Model Selection for Prediction -->
+            <label for="model">Choose Model:</label>
+            <select id="model" name="model">
+                <option value="TFT">Temporal Fusion Transformer</option>
+                <option value="LSTM">LSTM</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Compare Models Button -->
+        <form action="/compare_models" method="post">
+            <input type="hidden" id="ticker" name="ticker" value="">
+            <button type="submit">Compare Models</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to copy the ticker value for both forms
+        const tickerInput = document.querySelector('#ticker');
+        const hiddenTickerInput = document.querySelector('form[action="/compare_models"] input[name="ticker"]');
+
+        // Synchronize the value of the hidden input with the main ticker input
+        tickerInput.addEventListener('input', () => {
+            hiddenTickerInput.value = tickerInput.value;
+        });
+    </script>
+</body>
+</html>

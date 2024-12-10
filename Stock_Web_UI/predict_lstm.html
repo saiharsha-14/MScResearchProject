@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction and Trading Strategies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .mae, .trading-results {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .plot-container {
+            margin-top: 20px;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3b5998;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn-home:hover {
+            background-color: #2d4373;
+        }
+        .strategy-form {
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .strategy-form input[type="number"] {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .btn-strategy {
+            padding: 10px 20px;
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-strategy:hover {
+            background-color: #218838; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Results for {{ ticker }} (Model: {{ model }})</h2>
+        <p class="lstm_mae">Mean Absolute Error (MAE): {{ lstm_mae }}</p>
+        <p class="lstm_rmse">RMSE: {{ lstm_rmse }}</p>
+        <p class="lstm_r2">R2 Score: {{ lstm_r2 }}</p>
+   
+        <div class="plot-container">
+            {{ plot | safe }}
+        </div>
+
+        
+
+        <a href="/" class="btn-home">Back to Home</a>
+
+</body>
+</html>
